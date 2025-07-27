@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lavender;
+            text-align: center;
+            padding: 50px;
+        }
+        
+        .box {
+            background-color: white;
+            width: 300px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 100px;
+            margin: 10px;
+        }
+        
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: rgb(0, 128, 124);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .result {
+            background-color: beige;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class = "box">
+        <h1>Temperature Converter</h1>
+        
+        <h3>Celsius to Kelvin</h3>
+        <input type="number" id="celsius" placeholder="°C">
+        <button onclick="toKelvin()">Convert</button>
+        <div class="result" id="result1">Result</div>
+        
+        <h3>Kelvin to Celsius</h3>
+        <input type="number" id="kelvin" placeholder="K">
+        <button onclick="toCelsius()">Convert</button>
+        <div class="result" id="result2">Result</div>
+    </div>
+
+    <script>
+        function toKelvin() {
+            var c = document.getElementById('celsius').value;
+            var k = Number(c) + 273.15;
+            document.getElementById('result1').innerHTML = c + "°C = " + k + " K";
+        }
+        
+        function toCelsius() {
+            var k = document.getElementById('kelvin').value;
+            var c = Number(k) - 273.15;
+            document.getElementById('result2').innerHTML = k + " K = " + c + "°C";
+        }
+    </script>
+</body>
+</html>
